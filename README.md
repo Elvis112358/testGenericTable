@@ -1,6 +1,8 @@
 # TestGenericTable
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+![image](https://github.com/Elvis112358/testGenericTable/assets/89360370/9fd1b097-f9fe-4f0b-be33-f5227aabfa9b)
+
 
 ## Development server
 
