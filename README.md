@@ -1,6 +1,6 @@
 # TestGenericTable
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
+Implemntation of @elvis11235/ngx-generic-table library. Showcase example on how this strongly typed generic table library can be used
 ![image](https://github.com/Elvis112358/testGenericTable/assets/89360370/5e24a352-82d8-4e53-b44b-05e1cd5d84ae)
 
 
