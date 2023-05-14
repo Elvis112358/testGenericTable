@@ -1,0 +1,73 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .btn-continer {
+    height: 100%;
+    flex-direction: column;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  
+    button {
+      letter-spacing: 1px;
+    }
+  }
+  
+  .info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+  
+    img {
+        object-fit: cover;
+        width: 70px;
+        height: 70px;
+        border-radius: 54px;
+      }
+  }
+  
+  lib-ngx-generic-table {
+    width: 100%;
+    overflow-y: auto;
+    ::ng-deep .table-outter-wrapper {
+      width: calc(100vw - 200px);
+    }
+    ::ng-deep .table-wrapper {
+      margin-left: 0px;
+      margin-right: 0px;
+      ::ng-deep .body {
+        height: 100%;
+      }
+    }
+    ::ng-deep .no-result-container {
+      height: calc(100vh - 285px);
+    }
+  }
+  
+  .no-result { 
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: silver;
+    text-align: center;
+    height: 100%;
+    margin-top: 200px;
+    margin-left: 10px;
+    margin-bottom: 200px;
+  
+    .no-result-title {
+      font-family: 'Roboto';
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+  
+    .no-result-subtitle {
+      font-size: 24px;
+    }
+  }
+  
