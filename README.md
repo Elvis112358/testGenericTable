@@ -1,15 +1,13 @@
 # TestGenericTable
 
 Implementation of @elvis11235/ngx-generic-table library. Showcase example on how this strongly typed generic table library can be used
-![image](https://github.com/Elvis112358/testGenericTable/assets/89360370/5e24a352-82d8-4e53-b44b-05e1cd5d84ae)
-
+![image](https://github.com/Elvis112358/testGenericTable/assets/89360370/dbda4eda-7128-4ca6-8b43-dc095d2a3c0a)
 
 ## Strongly Typed
 If a developer tries to access or modify properties that are not defined in the provided data class, the compiler or linter will raise an error, indicating that the property does not exist.
 
-![strongly_type_class_example](https://github.com/Elvis112358/testGenericTable/assets/89360370/393b3c31-aa91-49c1-ac95-2cd05fed6a7e)
-![image](https://github.com/Elvis112358/testGenericTable/assets/89360370/ac12b78d-efc9-4950-a4a6-99e8caf9d24d)
-
+![strongly_type_class_example](https://github.com/Elvis112358/testGenericTable/assets/89360370/7b11243a-f328-4b18-9b86-27b034920748)
+![image](https://github.com/Elvis112358/testGenericTable/assets/89360370/91d7d9d3-90de-41fb-a186-ef1a7618319e)
 
 ## How to start
 
