@@ -159,7 +159,8 @@ export enum RequestMethod {
 
 ### When implementing app-generic-table you provide:
 
-#### 1. data source (data) which is generic. If you define type class for your provided data, that will activate strongly typed feature, which will increase type safety while using properties of data as source for table columns data. (Check test-table-example.component.html for implementation)
+#### 1. data source (data).
+If you define type class for your provided data, that will activate strongly typed feature, which will increase type safety while using properties of data as source for table columns data. (Check test-table-example.component.html for implementation)
 #### 2. Configuring the Table. 
 [totalElements] : number - provide number of all elmements (data.length) of the data retrieved from server (needed when cliend side sorting and paging option enabled)
 [pageSize] : number - elements per page 
