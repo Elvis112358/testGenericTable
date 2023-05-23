@@ -6,6 +6,7 @@ Implemntation of @elvis11235/ngx-generic-table library. Showcase example on how 
 
 ## Strongly Typed
 If a developer tries to access or modify properties that are not defined in the provided data class, the compiler or linter will raise an error, indicating that the property does not exist.
+
 ![strongly_type_class_example](https://github.com/Elvis112358/testGenericTable/assets/89360370/393b3c31-aa91-49c1-ac95-2cd05fed6a7e)
 
 ## How to start
