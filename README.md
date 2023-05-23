@@ -163,8 +163,11 @@ export enum RequestMethod {
 If you define type class for your provided data, that will activate strongly typed feature, which will increase type safety while using properties of data as source for table columns data. (Check test-table-example.component.html for implementation)
 #### 2. Configuring the Table. 
 [totalElements] : number - provide number of all elmements (data.length) of the data retrieved from server (needed when cliend side sorting and paging option enabled)
+
 [pageSize] : number - elements per page 
+
 [pagingType] : PagingType - SERVER_SIDE | CLIENT_SIDE : PagingType  - this generic table supports both client and server side handled paging, sorting, and for some data types filter(filtering covered on server side always)
+
 #### 3.Handling Events
 pageChange: Triggered when the page is changed.
 sorting: Triggered when sorting is applied.
