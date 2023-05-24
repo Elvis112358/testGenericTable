@@ -113,15 +113,15 @@ export class TestTableExampleComponent implements OnInit {
   }
 
   rtnImageSrc(name: string): string {
-    if (name.includes('andi')) {
-      return 'assets/andale.png';
-    } else if (name.includes('ilma')) {
-      return 'assets/ilma.png';
-    } else if (name.includes('Dzanis')) {
-      return 'assets/dzanke.png';
-    } else {
-      return 'assets/elva.png';
-    }
+    const images = [
+      'assets/andale.png',
+      'assets/ilma.png',
+      'assets/dzanke.png',
+      'assets/elva.png'
+    ];
+    const randomIndex = Math.floor(Math.random() * images.length);
+    return images[randomIndex];
+
   }
 
   calculateDate(startDate: Date, endDate: Date): number {
