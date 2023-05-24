@@ -14,7 +14,7 @@ const routes: Routes = [
     component: TestTableExampleComponent,
   },
   {
-    path: 'paging',
+    path: 'layout',
     component: LayoutComponent,
   },
 ];
