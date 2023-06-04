@@ -1,10 +1,9 @@
-# TestGenericTable
-Implementation of @elvis11235/ngx-generic-table library. Showcase example on how this strongly typed generic table library can be used
-![image](https://github.com/Elvis112358/testGenericTable/assets/89360370/dbda4eda-7128-4ca6-8b43-dc095d2a3c0a)
+# Strongly typed Table component with sorting, filtering and paging for angular
+Implementation of @elvis11235/ngx-generic-table library. Showcase example on how this strongly typed generic table library can be used https://github.com/Elvis112358/testGenericTable
 
 ## Description
 
-ngx-generic-table is a library for creating customizable tables in Angular applications.
+ngx-generic-table is a library for creating customizable tables in Angular applications. It has filtering, sorting, and paging option both for server and client side
 
 ## Installation
 
@@ -14,8 +13,8 @@ To install the library, run the following command:
 npm install @elvis11235/ngx-generic-table
 ```
 
+List of peerdependencies
 ```bash
-List of dependencies
     "@angular/animations": "^15.0.2",
     "@angular/cdk": "^15.2.5",
     "@angular/common": "^15.0.2",
@@ -30,33 +29,9 @@ List of dependencies
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
 ```
-## Strongly Typed
-If a developer tries to access or modify properties that are not defined in the provided data class, the compiler or linter will raise an error, indicating that the property does not exist.
-
-![strongly_type_class_example](https://github.com/Elvis112358/testGenericTable/assets/89360370/7b11243a-f328-4b18-9b86-27b034920748)
-
-## How to start
-
-Run npm install, to locally install all dependencies required.
-@elvis11235/ngx-generic-table depends on angular-material(filter section), angular-animations, etc. 
-Here is the list of all peerdependencies:
-    "@angular/animations": "^15.0.2",
-    "@angular/cdk": "^15.2.5",
-    "@angular/common": "^15.0.2",
-    "@angular/compiler": "^15.0.2",
-    "@angular/core": "^15.0.2",
-    "@angular/forms": "^15.0.2",
-    "@angular/material": "^15.2.5",
-    "@angular/platform-browser": "^15.0.2",
-    "@angular/platform-browser-dynamic": "^15.0.2",
-    "@angular/router": "^15.0.2",
-    "rxjs": "~7.5.0",
-    "tslib": "^2.3.0",
-    "zone.js": "~0.11.4"
-
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run ```bash ng serve ``` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Fake-JSON backend server
 
@@ -199,6 +174,12 @@ pageChange: Triggered when the page is changed.
 sorting: Triggered when sorting is applied.
 filtering: Triggered when filtering is applied.
 
-For more details check test-table-example.component.ts
+## Example
+Implementation of @elvis11235/ngx-generic-table library. Showcase example on how this strongly typed generic table library can be used https://github.com/Elvis112358/testGenericTable
 
+For more details check test-table-example.component.ts
+### Strongly Typed
+If a developer tries to access or modify properties that are not defined in the provided data class, the compiler or linter will raise an error, indicating that the property does not exist.
+
+![strongly_type_class_example](https://github.com/Elvis112358/testGenericTable/assets/89360370/7b11243a-f328-4b18-9b86-27b034920748)
 
