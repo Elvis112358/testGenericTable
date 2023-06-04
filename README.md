@@ -1,7 +1,36 @@
 # TestGenericTable
-
 Implementation of @elvis11235/ngx-generic-table library. Showcase example on how this strongly typed generic table library can be used
 ![image](https://github.com/Elvis112358/testGenericTable/assets/89360370/dbda4eda-7128-4ca6-8b43-dc095d2a3c0a)
+
+## Description
+
+ngx-generic-table is a library for creating customizable tables in Angular applications.
+
+## Installation
+
+To install the library, run the following command:
+
+```bash
+npm install @elvis11235/ngx-generic-table
+
+```bash
+npm install @elvis11235/ngx-generic-table
+
+```shell
+List of dependencies
+    "@angular/animations": "^15.0.2",
+    "@angular/cdk": "^15.2.5",
+    "@angular/common": "^15.0.2",
+    "@angular/compiler": "^15.0.2",
+    "@angular/core": "^15.0.2",
+    "@angular/forms": "^15.0.2",
+    "@angular/material": "^15.2.5",
+    "@angular/platform-browser": "^15.0.2",
+    "@angular/platform-browser-dynamic": "^15.0.2",
+    "@angular/router": "^15.0.2",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
 
 ## Strongly Typed
 If a developer tries to access or modify properties that are not defined in the provided data class, the compiler or linter will raise an error, indicating that the property does not exist.
