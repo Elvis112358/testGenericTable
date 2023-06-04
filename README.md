@@ -59,22 +59,22 @@ Customize the app-dg-column components based on your requirements:
 ```
 If you want more custom table column, provide template to app-dg-column, for example like this:
 
-```typescript
+```html
 <app-dg-column [header]="'Action'" [width]="120" [minWidth]="120" >
-        <ng-template [appTableRow]="users" [template]="Template.BODY" let-rowData let-ri="rowIndex">
-          <div class="info" *ngIf="switch[ri]">
-            <p>Position {{rowData.position}}</p>
-            <div>
-              <img src="{{rtnImageSrc(rowData.name)}}" alt="employee-image" (click)="seePosition(rowData)">
-            </div>
-          </div>
-          <div class="btn-continer" *ngIf="!switch[ri]">
-            <button class="test" (click)="seePosition(rowData)">
-              See Position
-            </button>
-          </div>
-        </ng-template>
-      </app-dg-column>
+  <ng-template [appTableRow]="users" [template]="Template.BODY" let-rowData let-ri="rowIndex">
+    <div class="info" *ngIf="switch[ri]">
+      <p>Position {{rowData.position}}</p>
+      <div>
+        <img src="{{rtnImageSrc(rowData.name)}}" alt="employee-image" (click)="seePosition(rowData)">
+      </div>
+    </div>
+    <div class="btn-continer" *ngIf="!switch[ri]">
+      <button class="test" (click)="seePosition(rowData)">
+        See Position
+      </button>
+    </div>
+  </ng-template>
+</app-dg-column>
 ```
 ### Exposed enums, classes and interfaces:
 
