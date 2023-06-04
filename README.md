@@ -115,11 +115,13 @@ If you define type class for your provided data, that will activate strongly typ
 
 `[pageSize] : number` - elements per page 
 
-`[pagingType] : PagingType - SERVER_SIDE | CLIENT_SIDE` : PagingType  - this generic table supports both client and server side handled paging, sorting, and for some data types filter(filtering covered on server side always)
+`[pagingType] : PagingType.SERVER_SIDE | PagingType.CLIENT_SIDE` : PagingType  - this generic table supports both client and server side handled paging, sorting, and for some data types filter(filtering covered on server side always)
 
 #### 3.Handling Events
 `(pageChange)`: Triggered when the page is changed.
+
 `(sorting)`: Triggered when sorting is applied.
+
 `(filtering)`: Triggered when filtering is applied.
 ### Exposed enums, classes and interfaces:
 
