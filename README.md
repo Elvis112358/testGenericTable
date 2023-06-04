@@ -12,11 +12,9 @@ To install the library, run the following command:
 
 ```bash
 npm install @elvis11235/ngx-generic-table
+```
 
 ```bash
-npm install @elvis11235/ngx-generic-table
-
-```shell
 List of dependencies
     "@angular/animations": "^15.0.2",
     "@angular/cdk": "^15.2.5",
@@ -31,12 +29,11 @@ List of dependencies
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
-
+```
 ## Strongly Typed
 If a developer tries to access or modify properties that are not defined in the provided data class, the compiler or linter will raise an error, indicating that the property does not exist.
 
 ![strongly_type_class_example](https://github.com/Elvis112358/testGenericTable/assets/89360370/7b11243a-f328-4b18-9b86-27b034920748)
-![image](https://github.com/Elvis112358/testGenericTable/assets/89360370/91d7d9d3-90de-41fb-a186-ef1a7618319e)
 
 ## How to start
 
