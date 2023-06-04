@@ -1,9 +1,7 @@
 # Strongly typed Table component with sorting, filtering and paging for angular
-Implementation of @elvis11235/ngx-generic-table library. Showcase example on how this strongly typed generic table library can be used https://github.com/Elvis112358/testGenericTable
-
 ## Description
 
-ngx-generic-table is a library for creating customizable tables in Angular applications. It has filtering, sorting, and paging option both for server and client side
+ngx-generic-table is a library for creating customizable strongly typed tables in Angular applications. It has filtering, sorting, and paging option both for server and client side
 
 ## Installation
 
@@ -29,29 +27,61 @@ List of peerdependencies
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
 ```
+Import the necessary modules in your Angular module file (app.module.ts or any relevant module file). Add the following import statements:
+
+```typescript
+import { NgModule } from '@angular/core';
+import { NgxGenericTableModule } from '@elvis11235/ngx-generic-table';
+
+@NgModule({
+  imports: [
+    // Other imports...
+    NgxGenericTableModule
+  ],
+  // Other module configurations...
+})
+export class AppModule { }
+```
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Fake-JSON backend server
 
-Install fake json server `npm install -g json-server`
-Add build command to package.json to scripts section `"start-server": "json-server --watch db.json",`
+Install fake json server `npm install -g json-server`,
+Add build command to package.json to scripts section `"start-server": "json-server --watch db.json"`,
 Run `npm run start-server` for a fake-json backend server. 
 
 ## Useage od @elvis11235/ngx-generic-table
 Use the library component in your template
-```typescript
+```html
 <app-layout>
-  <lib-ngx-generic-table [data]="users" [totalElements]="records" [pageSize]="pageSize" [pagingType]="pagingType"
-    (pageChange)="pageChanged($event)" (sorting)="serverHandledSorting($event)"
-    (filtering)="serverHendledFiltering($event)">
-    <!-- Define your app-dg-column components here -->
+  <lib-ngx-generic-table
+    [data]="users"
+    [totalElements]="records"
+    [pageSize]="pageSize"
+    [pagingType]="pagingType"
+    (pageChange)="pageChanged($event)"
+    (sorting)="serverHandledSorting($event)"
+    (filtering)="serverHendledFiltering($event)"
+  >
+    <!-- Define your columns here -->
+    <app-dg-column
+      [field]="'name'"
+      header="First Name"
+      [width]="90"
+      [minWidth]="80"
+      [sortable]="true"
+      [textAlign]="'left'"
+      [dataType]="FilterDataType.TEXT"
+      [filterOptOn]="true"
+    ></app-dg-column>
+    <!-- Add more columns... -->
   </lib-ngx-generic-table>
 </app-layout>
 ```
 Customize the app-dg-column components based on your requirements:
-```typescript
+```html
 <app-dg-column [field]="'name'" header="First Name" [width]="90" [minWidth]="80" [sortable]="true"
   [textAlign]="'left'" [dataType]="FilterDataType.TEXT" [filterOptOn]="true"></app-dg-column>
 <!-- Add more app-dg-column components as needed -->
@@ -76,6 +106,21 @@ If you want more custom table column, provide template to app-dg-column, for exa
   </ng-template>
 </app-dg-column>
 ```
+### When implementing app-generic-table you provide:
+
+#### 1. data source (data).
+If you define type class for your provided data, that will activate strongly typed feature, which will increase type safety while using properties of data as source for table columns data. (Check test-table-example.component.html for implementation)
+#### 2. Configuring the Table. 
+`[totalElements] : number` - provide number of all elmements (data.length) of the data retrieved from server (needed when cliend side sorting and paging option enabled)
+
+`[pageSize] : number` - elements per page 
+
+`[pagingType] : PagingType - SERVER_SIDE | CLIENT_SIDE` : PagingType  - this generic table supports both client and server side handled paging, sorting, and for some data types filter(filtering covered on server side always)
+
+#### 3.Handling Events
+`(pageChange)`: Triggered when the page is changed.
+`(sorting)`: Triggered when sorting is applied.
+`(filtering)`: Triggered when filtering is applied.
 ### Exposed enums, classes and interfaces:
 
 ```typescript
@@ -197,21 +242,7 @@ export enum RequestMethod {
 }
 ```
 
-### When implementing app-generic-table you provide:
 
-#### 1. data source (data).
-If you define type class for your provided data, that will activate strongly typed feature, which will increase type safety while using properties of data as source for table columns data. (Check test-table-example.component.html for implementation)
-#### 2. Configuring the Table. 
-[totalElements] : number - provide number of all elmements (data.length) of the data retrieved from server (needed when cliend side sorting and paging option enabled)
-
-[pageSize] : number - elements per page 
-
-[pagingType] : PagingType - SERVER_SIDE | CLIENT_SIDE : PagingType  - this generic table supports both client and server side handled paging, sorting, and for some data types filter(filtering covered on server side always)
-
-#### 3.Handling Events
-pageChange: Triggered when the page is changed.
-sorting: Triggered when sorting is applied.
-filtering: Triggered when filtering is applied.
 
 ## Example
 Implementation of @elvis11235/ngx-generic-table library. Showcase example on how this strongly typed generic table library can be used https://github.com/Elvis112358/testGenericTable
