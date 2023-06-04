@@ -31,16 +31,54 @@ List of peerdependencies
 ```
 ## Development server
 
-Run ```bash ng serve ``` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Fake-JSON backend server
 
-Install fake json server : npm install -g json-server
+Install fake json server `npm install -g json-server`
+Add build command to package.json to scripts section `"start-server": "json-server --watch db.json",`
 Run `npm run start-server` for a fake-json backend server. 
 
 ## Useage od @elvis11235/ngx-generic-table
+Use the library component in your template
+```typescript
+<app-layout>
+  <lib-ngx-generic-table [data]="users" [totalElements]="records" [pageSize]="pageSize" [pagingType]="pagingType"
+    (pageChange)="pageChanged($event)" (sorting)="serverHandledSorting($event)"
+    (filtering)="serverHendledFiltering($event)">
+    <!-- Define your app-dg-column components here -->
+  </lib-ngx-generic-table>
+</app-layout>
+```
+Customize the app-dg-column components based on your requirements:
+```typescript
+<app-dg-column [field]="'name'" header="First Name" [width]="90" [minWidth]="80" [sortable]="true"
+  [textAlign]="'left'" [dataType]="FilterDataType.TEXT" [filterOptOn]="true"></app-dg-column>
+<!-- Add more app-dg-column components as needed -->
+
+```
+If you want more custom table column, provide template to app-dg-column, for example like this:
+
+```typescript
+<app-dg-column [header]="'Action'" [width]="120" [minWidth]="120" >
+        <ng-template [appTableRow]="users" [template]="Template.BODY" let-rowData let-ri="rowIndex">
+          <div class="info" *ngIf="switch[ri]">
+            <p>Position {{rowData.position}}</p>
+            <div>
+              <img src="{{rtnImageSrc(rowData.name)}}" alt="employee-image" (click)="seePosition(rowData)">
+            </div>
+          </div>
+          <div class="btn-continer" *ngIf="!switch[ri]">
+            <button class="test" (click)="seePosition(rowData)">
+              See Position
+            </button>
+          </div>
+        </ng-template>
+      </app-dg-column>
+```
 ### Exposed enums, classes and interfaces:
 
+```typescript
 export class TableDataQuery {
   currentPage: number | undefined;
   pageSize: number | undefined;
@@ -157,6 +195,7 @@ export enum RequestMethod {
   Patch = 'PATCH',
   Delete = 'DELETE',
 }
+```
 
 ### When implementing app-generic-table you provide:
 
