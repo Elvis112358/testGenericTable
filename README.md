@@ -53,30 +53,202 @@ Add build command to package.json to scripts section `"start-server": "json-serv
 Run `npm run start-server` for a fake-json backend server. 
 
 ## API Interface
-
+### lib-ngx-generic-table
 <table>
   <tr>
-    <th>Column 1 Header</th>
-    <th>Column 2 Header</th>
-    <th>Column 3 Header</th>
+    <th>Options</th>
+    <th>Type</th>
+    <th>Default</th>
+    <th>Description</th>
   </tr>
   <tr>
-    <td>Row 1, Column 1</td>
-    <td>Row 1, Column 2</td>
-    <td>Row 1, Column 3</td>
+    <td>data</td>
+    <td>User Defined Class Type</td>
+    <td>[]</td>
+    <td>REQUIRED - Array of data to be shown in table</td>
   </tr>
   <tr>
-    <td>Row 2, Column 1</td>
-    <td>Row 2, Column 2</td>
-    <td>Row 2, Column 3</td>
+    <td>totalElements</td>
+    <td>number</td>
+    <td>0</td>
+    <td>REQUIRED - Total number of retrieved data. Used for calculating number of pages for client side paging</td>
   </tr>
   <tr>
-    <td>Row 3, Column 1</td>
-    <td>Row 3, Column 2</td>
-    <td>Row 3, Column 3</td>
+    <td>pageSize</td>
+    <td>number</td>
+    <td>10</td>
+    <td>REQUIRED - Number of elements per page</td>
+  </tr>
+   <tr>
+    <td>pagingType</td>
+    <td>enum PagingType</td>
+    <td>PagingType.SERVER_SIDE</td>
+    <td>REQUIRED - Selecting server side or client side option for paging and sorting</td>
+  </tr>
+  <tr>
+    <td>pageChange</td>
+    <td>EventEmitter<number></td>
+    <td>1</td>
+    <td>Subscribe to page change event</td>
+  </tr>
+   <tr>
+    <td>sorting</td>
+    <td>EventEmitter<Sorting></td>
+    <td>undefined</td>
+    <td>Properties column and sort direction</td>
+  </tr>
+  <tr>
+    <td>filtering</td>
+    <td>EventEmitter<Filter></td>
+    <td>undefined</td>
+    <td>Filter properties field, value, filter operation</td>
   </tr>
 </table>
 
+Interfaces, Classes and Enums
+```typescript
+export enum PagingType {
+  SERVER_SIDE,
+  CLIENT_SIDE,
+}
+
+export class Sorting {
+  column: string | undefined;
+  sortDirection!: SortingType | undefined;
+
+  constructor(
+    column: string | undefined = undefined,
+    sortDirection: SortingType | undefined = undefined
+  ) {
+    this.column = column;
+    this.sortDirection = sortDirection;
+  }
+}
+
+export enum SortingType {
+  ASC = 'ASC',
+  DESC = 'DESC',
+}
+
+export class Filter {
+  field: string | undefined;
+  value: string | string[] | number | Date | Date[] | undefined;
+  filterOperation: FilterOperation| FilterOperation[] | undefined;
+  constructor(
+    field: string | undefined = undefined,
+    value: string | number | Date | Date[] | undefined = undefined,
+    filterOperation: FilterOperation | FilterOperation[] | undefined = undefined
+  ) {
+    this.field = field;
+    this.value = value;
+    this.filterOperation = filterOperation;
+  }
+}
+
+export enum FilterOperation {
+  EQUALS = '=',
+  RANGE_LOWER = '_gte',
+  RANGE_HIGHER = '_lte',
+  EXCLUDE = '_ne',
+  LIKE = '_like',
+}
+
+```
+
+### app-dg-column
+<table>
+  <tr>
+    <th>Options</th>
+    <th>Type</th>
+    <th>Default</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>field</td>
+    <td>string</td>
+    <td>''</td>
+    <td>REQUIRED -Property of Class type of given data, that we want to show in given column</td>
+  </tr>
+  <tr>
+    <td>header</td>
+    <td>string</td>
+    <td>''</td>
+    <td>REQUIRED - Column header</td>
+  </tr>
+  <tr>
+    <td>width</td>
+    <td>number | string</td>
+    <td></td>
+    <td>OPTIONAL - width of column</td>
+  </tr>
+   <tr>
+    <td>minWidth</td>
+    <td>number</td>
+    <td></td>
+    <td>OPTIONAL - minimal width of column</td>
+  </tr>
+  <tr>
+    <td>sortable</td>
+    <td>boolean<number></td>
+    <td>false</td>
+    <td>OPTIONAL - sort option for column enabled/disabled</td>
+  </tr>
+   <tr>
+    <td>textAlign</td>
+    <td>string</td>
+    <td>'center'</td>
+    <td>align column items to the left, right or center</td>
+  </tr>
+  <tr>
+    <td>dataType</td>
+    <td>FilterDataType<Filter></td>
+    <td>FilterDataType.TEXT</td>
+    <td>Filter properties field, value, filter operation</td>
+  </tr>
+  <tr>
+    <td>filterOptOn</td>
+    <td>boolean</td>
+    <td>false</td>
+    <td>Enable/disable filtering option for given column</td>
+  </tr>
+  <tr>
+    <td>selectFilterOptions</td>
+    <td>Array<SelectFilterOptions></td>
+    <td>[]</td>
+    <td>OPTIONAL - provide select options for select filter</td>
+  </tr>
+  <tr>
+    <td>fixed</td>
+    <td>FixedPosition</td>
+    <td></td>
+    <td>OPTIONAL - if property exists fix column to the left or right position depending on FixedPosition</td>
+  </tr>
+</table>
+
+Interfaces, Classes and Enums
+```typescript
+export enum FilterDataType {
+  TEXT = 'text',
+  NUMBER = 'number',
+  DATE = 'DateTime',
+  SELECT = 'select'
+}
+
+export class SelectFilterOptions {
+    id?: string | number;
+    text?: string | number;
+    constructor(id: string | number, text: string | number ) {
+        this.id = id;
+        this.text = text;
+    }
+}
+
+export enum FixedPosition {
+  LEFT,
+  RIGHT,
+}
+
+```
 ## Useage od @elvis11235/ngx-generic-table
 Use the library component in your template
 ```html
