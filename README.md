@@ -52,6 +52,31 @@ Install fake json server `npm install -g json-server`,
 Add build command to package.json to scripts section `"start-server": "json-server --watch db.json"`,
 Run `npm run start-server` for a fake-json backend server. 
 
+## API Interface
+
+<table>
+  <tr>
+    <th>Column 1 Header</th>
+    <th>Column 2 Header</th>
+    <th>Column 3 Header</th>
+  </tr>
+  <tr>
+    <td>Row 1, Column 1</td>
+    <td>Row 1, Column 2</td>
+    <td>Row 1, Column 3</td>
+  </tr>
+  <tr>
+    <td>Row 2, Column 1</td>
+    <td>Row 2, Column 2</td>
+    <td>Row 2, Column 3</td>
+  </tr>
+  <tr>
+    <td>Row 3, Column 1</td>
+    <td>Row 3, Column 2</td>
+    <td>Row 3, Column 3</td>
+  </tr>
+</table>
+
 ## Useage od @elvis11235/ngx-generic-table
 Use the library component in your template
 ```html
