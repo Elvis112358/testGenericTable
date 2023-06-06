@@ -87,19 +87,19 @@ Run `npm run start-server` for a fake-json backend server.
   </tr>
   <tr>
     <td>pageChange</td>
-    <td>EventEmitter<number></td>
+    <td>'EventEmitter<number>'</td>
     <td>1</td>
     <td>Subscribe to page change event</td>
   </tr>
    <tr>
     <td>sorting</td>
-    <td>EventEmitter<Sorting></td>
+    <td>'EventEmitter<Sorting>'</td>
     <td>undefined</td>
     <td>Properties column and sort direction</td>
   </tr>
   <tr>
     <td>filtering</td>
-    <td>EventEmitter<Filter></td>
+    <td>'EventEmitter<Filter>'</td>
     <td>undefined</td>
     <td>Filter properties field, value, filter operation</td>
   </tr>
