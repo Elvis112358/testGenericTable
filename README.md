@@ -1,6 +1,7 @@
 # Strongly typed Table component with sorting, filtering and paging for angular
 
 Implementation of @elvis11235/ngx-generic-table library. Showcase example on how this strongly typed generic table library can be used
+
 ![image](https://github.com/Elvis112358/testGenericTable/assets/89360370/2b09d07f-736f-4bc2-874b-678874516770)
 
 ## Description
@@ -248,11 +249,6 @@ export enum RequestMethod {
   Delete = 'DELETE',
 }
 ```
-
-
-
-## Example
-Implementation of @elvis11235/ngx-generic-table library. Showcase example on how this strongly typed generic table library can be used https://github.com/Elvis112358/testGenericTable
 
 For more details check test-table-example.component.ts
 ### Strongly Typed
